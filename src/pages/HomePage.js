@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchBatmanShowList } from '../redux/actions/batmanShowsActions';
 import Card from '../components/CardComponent';
 
-function HomePage() {
-  return (
-    <div>
-      <Card />
-    </div>
-  );
+function HomePage(props) {
+  const { shows, fetchBatmanShowList } = props;
+
+  useEffect(() => {
+    fetchBatmanShowList();
+  }, [fetchBatmanShowList]);
+
+  return <Card data={shows} />;
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  const { loadingShowList, shows, errorShowList } = state.shows;
+  return { loadingShowList, shows, errorShowList };
+};
+
+const mapDispatchToProps = {
+  fetchBatmanShowList
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
