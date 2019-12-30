@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import {
   batmanShowListReducers,
   batmanShowReducers
-} from './batmanShowsReducer';
+} from './batmanShowsReducers';
 
 const rootReducer = combineReducers({
   shows: batmanShowListReducers,
