@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn run build && mv build/index.html build/200.html && surge build batmantvshows.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
