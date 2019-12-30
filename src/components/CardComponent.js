@@ -33,7 +33,7 @@ function CardComponent(props) {
                   </CardText>
                 </CardBody>
                 <CardFooter className="footer">
-                  <Link to={`/showsdetail/${data.show.id}`}>
+                  <Link to={`/batman/${data.show.id}`}>
                     <Button>Look</Button>
                   </Link>
                 </CardFooter>

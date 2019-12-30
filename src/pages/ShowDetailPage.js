@@ -27,14 +27,11 @@ function ShowDetailPage(props) {
         <BreadcrumbItem active>{show.name}</BreadcrumbItem>
       </Breadcrumb>
       <Container>
-        <Row>
-          <Media style={{ margin: ' 50px' }}>
+        <Media>
+          <Row>
             <Col sm="4" xs="12">
               <Media left>
-                <Media
-                  src={imageModel.image.medium}
-                  alt="Generic placeholder image"
-                />
+                <Media src={imageModel.image.medium} />
                 <h6>
                   Language <Badge color="secondary">{show.language}</Badge>
                 </h6>
@@ -44,11 +41,11 @@ function ShowDetailPage(props) {
               <Media body>
                 <Media heading>{show.name}</Media>
                 <Badge color="info">{show.type}</Badge>
-                <div>{show.summary}</div>
+                <div>{String(show.summary).replace(/(<([^>]+)>)/gi, '')}</div>
               </Media>
             </Col>
-          </Media>
-        </Row>
+          </Row>
+        </Media>
       </Container>
     </>
   );
@@ -59,7 +56,7 @@ const mapStateToProps = state => {
   const imageModel = {
     image: { ...show.image }
   };
-  console.log(show);
+
   return { loadingShow, show, errorShow, imageModel };
 };
 
