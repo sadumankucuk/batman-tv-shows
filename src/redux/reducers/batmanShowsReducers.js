@@ -20,19 +20,19 @@ export const batmanShowListReducers = (
     case actionTypes.FETCH_BATMAN_SHOWS_PENDING:
       return {
         ...state,
-        loading: true
+        loadingShowList: true
       };
     case actionTypes.FETCH_BATMAN_SHOWS_FULFILLED:
       return {
         ...state,
-        loading: false,
+        loadingShowList: false,
         shows: action.payload
       };
     case actionTypes.FETCH_BATMAN_SHOWS_REJECTED:
       return {
         ...state,
-        loading: false,
-        error: action.error
+        loadingShowList: false,
+        errorShowList: action.error
       };
     default:
       return state;
