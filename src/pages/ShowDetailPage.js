@@ -52,12 +52,12 @@ function ShowDetailPage(props) {
 }
 
 const mapStateToProps = state => {
-  const { loadingShow, show, errorShow } = state.show;
+  const { show } = state.show;
   const imageModel = {
     image: { ...show.image }
   };
 
-  return { loadingShow, show, errorShow, imageModel };
+  return { show, imageModel };
 };
 
 const mapDispatchToProps = {

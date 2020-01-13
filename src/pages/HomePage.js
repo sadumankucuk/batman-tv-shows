@@ -14,8 +14,8 @@ function HomePage(props) {
 }
 
 const mapStateToProps = state => {
-  const { loadingShowList, shows, errorShowList } = state.shows;
-  return { loadingShowList, shows, errorShowList };
+  const { shows } = state.shows;
+  return { shows };
 };
 
 const mapDispatchToProps = {
