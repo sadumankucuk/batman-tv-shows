@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
 import {
   Media,
   Badge,
@@ -12,11 +13,12 @@ import { connect } from 'react-redux';
 import { fetchBatmanShow } from '../redux/actions/batmanShowsActions';
 
 function ShowDetailPage(props) {
-  const { fetchBatmanShow, imageModel, match, show } = props;
+  const { fetchBatmanShow, imageModel, show } = props;
+  const { id } = useParams();
 
   useEffect(() => {
-    fetchBatmanShow(match.params.id);
-  }, [fetchBatmanShow, match]);
+    fetchBatmanShow(id);
+  }, [fetchBatmanShow, id]);
 
   return (
     <>
