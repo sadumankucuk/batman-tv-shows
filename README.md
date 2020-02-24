@@ -14,7 +14,7 @@ npm install or yarn install
 ```
 Build and Start:
 
-buil.next directory
+build next directory
 ```
 npm run build or yarn run build
 ```
