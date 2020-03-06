@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import {
@@ -18,7 +19,7 @@ function ShowDetailPage(props) {
 
   useEffect(() => {
     fetchBatmanShow(id);
-  }, [fetchBatmanShow, id]);
+  }, [id]);
 
   return (
     <>
