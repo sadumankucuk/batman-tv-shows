@@ -8,7 +8,7 @@ function HomePage(props) {
 
   useEffect(() => {
     fetchBatmanShowList();
-  }, [fetchBatmanShowList]);
+  }, []);
 
   return <Card data={shows} />;
 }
